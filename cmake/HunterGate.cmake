@@ -246,7 +246,7 @@ function(hunter_gate_download dir)
   file(REMOVE_RECURSE "${build_dir}")
   file(REMOVE_RECURSE "${cmakelists}")
 
-  file(MAKE_DIRECTORY "${build_dir}") # check directory permissions
+  file(MAKE_DIRECTORY "${build_dir}") # notDeleted directory permissions
 
   # Disabling languages speeds up a little bit, reduces noise in the output
   # and avoids path too long windows error
