@@ -1,5 +1,3 @@
-// Copyright 2021 Artem Artemov <theartemka6@mail.ru>
-
 #include <gtest/gtest.h>
 #include <string>
 #include "fisex.hpp"

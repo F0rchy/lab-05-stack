@@ -1,6 +1,4 @@
-//
-// Created by forchy on 10.05.22.
-//
+// Copyright 2021 Artem Artemov <theartemka6@mail.ru>
 
 #ifndef INCLUDE_SECEX_HPP_
 #define INCLUDE_SECEX_HPP_
