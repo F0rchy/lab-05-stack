@@ -1,4 +1,4 @@
-// Copyright 2021 Your Name <your_email>
+// Copyright 2021 Artem Artemov <theartemka6@mail.ru>
 
 #include <stdexcept>
 
