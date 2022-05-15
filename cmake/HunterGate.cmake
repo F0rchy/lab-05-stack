@@ -320,7 +320,8 @@ function(hunter_gate_download dir)
   if(NOT download_result EQUAL 0)
     hunter_gate_internal_error(
         "Configure project failed."
-        "To reproduce the error run: ${CMAKE_COMMAND} -H${dir} -B${build_dir} -G${CMAKE_GENERATOR} ${toolchain_arg} ${make_arg}"
+        "To reproduce the error run: ${CMAKE_COMMAND} -H${dir} -B${build_dir} -G${CMAKE_GENERATOR} ${toolchain_arg}
+        ${make_arg}"
         "In directory ${dir}"
     )
   endif()
