@@ -20,96 +20,96 @@ class Stack {
 
  public:
   Stack() {
-    this->start = new Element<T>;
-    this->last = this->start;
-    this->notDeleted = true;
+    start = new Element<T>;
+    last = start;
+    notDeleted = true;
   }
 
   explicit Stack(T&& valueStart) {
-    this->notDeleted = true;
-    this->start = new Element<T>;
+    notDeleted = true;
+    start = new Element<T>;
     start->value = valueStart;
     start->link = nullptr;
-    this->last = this->start;
+    last = start;
   }
 
   explicit Stack(T& value) = delete;
 
   ~Stack() {
     Element<T>* temp;
-    if (this->notDeleted) {
-      while (this->start->link) {
-        temp = this->start;
-        while (temp->link != this->last) {
+    if (notDeleted) {
+      while (start->link) {
+        temp = start;
+        while (temp->link != last) {
           temp = temp->link;
         }
         if (last) {
           delete (last);
           temp->link = nullptr;
         }
-        this->last = temp;
+        last = temp;
       }
       if (last) {
         delete (last);
       }
-      this->notDeleted = false;
+      notDeleted = false;
     }
   }
 
   void push(T&& value) {
-    if (!this->start->value) {
+    if (!start->value) {
       start->value = std::move(value);
       start->link = nullptr;
-      this->last = this->start;
+      last = start;
       return;
     }
     Element<T>* temp = new Element<T>;
     last->link = temp;
     temp->value = std::move(value);
     temp->link = nullptr;
-    this->last = temp;
+    last = temp;
   }
 
   void push(const T& value) {
-    if (!this->start->value) {
+    if (!start->value) {
       last->value = value;
       last->link = nullptr;
-      this->start = this->last;
+      start = last;
       return;
     }
     Element<T>* temp = new Element<T>;
     last->link = temp;
     temp->value = value;
     temp->link = nullptr;
-    this->last = temp;
+    last = temp;
   }
 
   void pop() {
-    if (!this->start->link) {
+    if (!start->link) {
       return;
     } else {
-      Element<T>* temp = this->start;
-      while (temp->link != this->last) {
+      Element<T>* temp = start;
+      while (temp->link != last) {
         temp = temp->link;
       }
       if (last) {
         delete (last);
         temp->link = nullptr;
       }
-      this->last = temp;
+      last = temp;
       return;
     }
   }
 
-  const T& head() const { return this->last->value; }
+  const T& head() const { return last->value; }
 
   Stack<T>& operator=(const Stack<T>& right) = delete;
 
   Stack<T>& operator=(Stack<T>&& right) {
-    if ((this->start != right.start) || (this->last != right.last)) {
-      this->~Stack();
-      this->start = std::move(right.start);
-      this->last = std::move(right.last);
+    if ((start != right.start) || (last != right.last)) {
+      ~Stack();
+      start = std::move(right.start);
+      last = std::move(right.last);
       notDeleted = true;
     }
     return *this;

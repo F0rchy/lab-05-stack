@@ -15,20 +15,20 @@ class SomeType {
   }
 
   SomeType(int fi) {
-    this->f = fi;
-    this->ft = 0;
+    f = fi;
+    ft = 0;
   }
 
   SomeType(int fi, double fth) {
-    this->f = fi;
-    this->ft = fth;
+    f = fi;
+    ft = fth;
   }
 
   bool operator!() const {
-    if (this->f != -1) {
+    if (f != -1) {
       return false;
     }
-    if (this->ft != -1) {
+    if (ft != -1) {
       return false;
     }
     return true;
