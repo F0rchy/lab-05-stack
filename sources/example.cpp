@@ -1,6 +1,6 @@
 // Copyright 2021 Artem Artemov <theartemka6@mail.ru>
 
-#include <fisex.hpp>
+#include <first.hpp>
 #include <stdexcept>
 
 auto example() -> void {

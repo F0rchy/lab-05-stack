@@ -1,7 +1,9 @@
 #include <gtest/gtest.h>
+
 #include <string>
-#include "fisex.hpp"
-#include "secex.hpp"
+
+#include "first.hpp"
+#include "second.hpp"
 
 TEST(FirstStack, ConstructorTest) {
   Stack<int> stack(234);
